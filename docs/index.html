@@ -3,307 +3,690 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="DASH: Dynamic Adversarial Scenario Generation with High-Risk Resampling from Policy Feedback for Closed-Loop Driving Training.">
-  <meta name="theme-color" content="#ffffff">
-  <title>DASH Project Page</title>
-  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script src="./assets/js/main.js" defer></script>
+
+  <meta
+    name="description"
+    content="DASH: Dynamic Adversarial Scenario Generation with High-Risk Resampling from Policy Feedback for Closed-Loop Driving Training."
+  >
+
+  <meta name="theme-color" content="#f3f4f6">
+
+  <title>DASH | Project Page</title>
+
+  <link
+    rel="icon"
+    href="./assets/images/favicon.svg"
+    type="image/svg+xml"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./assets/css/style.css"
+  >
 </head>
+
 <body>
+
   <header class="site-header">
-    <div class="container nav">
+    <div class="nav-container">
       <a class="brand" href="#top">DASH</a>
-      <nav class="nav-links">
+
+      <nav class="nav-links" aria-label="Page navigation">
         <a href="#overview">Overview</a>
-        <a href="#method">Method</a>
         <a href="#results">Results</a>
         <a href="#demos">Demos</a>
+        <a href="#acknowledgments">Acknowledgments</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-inner">
-        <p class="hero-tag">Project Page</p>
-        <h1 class="hero-title">
-          DASH: Dynamic Adversarial Scenario Generation with High-Risk Resampling
-          from Policy Feedback for Closed-Loop Driving Training
-        </h1>
 
-        <p class="hero-authors">
-          Dehui Chen, Yongzhi Liu, Xintao Yan, Zhong Cao, Dian Zhou, Hansen Wang,
-          Yushu Qiu, Zhaozhi Dong, Lijun Liu, Taonian Liang, Jiabing Gao, Guodong Yin,
-          Weichao Zhuang*
-        </p>
+  <main class="page-container" id="top">
 
-        <p class="hero-affiliations">
-          Southeast University &nbsp;|&nbsp;
-          The University of Hong Kong &nbsp;|&nbsp;
-          University of Michigan &nbsp;|&nbsp;
-          Chery Automobile Co., Ltd.
-        </p>
+    <!-- ===================================================== -->
+    <!-- HERO -->
+    <!-- ===================================================== -->
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="./assets/paper/dash_arXiv.pdf" target="_blank">Paper</a>
-          <a class="btn" href="#" aria-disabled="true">arXiv soon</a>
-          <a class="btn" href="#" aria-disabled="true">Code soon</a>
-        </div>
+    <section class="hero-panel">
 
-        <p class="hero-summary">
-          DASH converts multimodal motion-prior futures into policy-relevant stress cases
-          through learned ranking and bounded local refinement, then trains a risk-gated
-          residual driving policy that preserves nominal capability while responding to
-          high-risk interactions.
-        </p>
+      <p class="project-label">Research Project Page</p>
+
+      <h1>
+        DASH: Dynamic Adversarial Scenario Generation with
+        High-Risk Resampling from Policy Feedback for
+        Closed-Loop Driving Training
+      </h1>
+
+      <p class="authors">
+        Dehui Chen<sup>1</sup>,
+        Yongzhi Liu<sup>1</sup>,
+        Xintao Yan<sup>2</sup>,
+        Zhong Cao<sup>3</sup>,
+        Weilong Hu<sup>4</sup>,
+        Dian Zhou<sup>1</sup>,
+        Hansen Wang<sup>1</sup>,
+        Yushu Qiu<sup>1</sup>,
+        Zhaozhi Dong<sup>1</sup>,
+        Lijun Liu<sup>1</sup>,
+        Taonian Liang<sup>4</sup>,
+        Guodong Yin<sup>1</sup>,
+        Weichao Zhuang<sup>1,*</sup>
+      </p>
+
+      <div class="affiliations">
+        <span><sup>1</sup>Southeast University</span>
+        <span><sup>2</sup>The University of Hong Kong</span>
+        <span><sup>3</sup>University of Michigan</span>
+        <span><sup>4</sup>Chery Automobile Co., Ltd.</span>
       </div>
+
+      <div class="resource-buttons">
+
+        <a
+          class="resource-button primary"
+          href="./assets/paper/DASH_arXiv.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Paper
+        </a>
+
+        <span class="resource-button disabled">
+          arXiv soon
+        </span>
+
+        <span class="resource-button disabled">
+          Code soon
+        </span>
+
+      </div>
+
     </section>
 
-    <section class="section" id="overview">
-      <div class="container">
-        <div class="section-head">
+
+    <!-- ===================================================== -->
+    <!-- OVERVIEW -->
+    <!-- ===================================================== -->
+
+    <section class="content-panel" id="overview">
+
+      <div class="section-heading">
+        <span class="section-number">01</span>
+
+        <div>
           <h2>Overview</h2>
-          <p>
-            Autonomous-driving policies must stay reliable in nominal traffic while still
-            responding correctly to rare close interactions. DASH addresses this by coupling
-            adversarial scenario generation with risk-conditioned policy learning in one
-            closed-loop framework.
-          </p>
-        </div>
-
-        <div class="overview-grid">
-          <div class="card">
-            <h3>Policy-aligned stress</h3>
-            <p>
-              Candidate futures are ranked by interaction risk, so generated scenarios stay
-              relevant to the current driving policy rather than maximizing collision only.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Bounded local refinement</h3>
-            <p>
-              DASH edits trajectories locally around plausible motion-prior modes, improving
-              stress while keeping the scenario interpretable and close to the original scene.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Risk-gated residual control</h3>
-            <p>
-              A base actor maintains nominal driving, while a residual branch is activated
-              only when online interaction risk rises.
-            </p>
-          </div>
-        </div>
-
-        <div class="abstract-box">
-          <h3>Abstract</h3>
-          <p>
-            Autonomous-driving policies must remain reliable in nominal traffic while recovering
-            from rare close interactions, yet such long-tail failures are sparsely represented in
-            natural driving logs. DASH introduces a dynamic framework with high-risk resampling
-            from policy feedback for closed-loop driving training. It searches a multimodal
-            motion-prior candidate bank, ranks future trajectories by learned interaction risk,
-            and applies bounded residual edits to create interpretable stress cases. On the policy
-            side, a base actor preserves nominal driving, while an online risk gate activates
-            residual corrective control only as local interaction risk rises. Experiments show that
-            DASH improves both stress generation and policy robustness across nominal, adversarial,
-            and mixed evaluation suites.
-          </p>
+          <p>Framework motivation and overall workflow.</p>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="method">
-      <div class="container">
-        <div class="section-head">
-          <h2>Method</h2>
-          <p>
-            DASH follows a simple pipeline: generate multimodal candidate futures, rank them by
-            risk relevance, refine locally under bounded edits, and train a risk-gated residual
-            driving policy in closed loop.
-          </p>
-        </div>
 
-        <div class="figure-card">
-          <img src="./assets/figures/generation_architecture.png" alt="DASH framework overview">
-        </div>
+      <div class="abstract-block">
+
+        <h3>Abstract</h3>
+
+        <p>
+          Autonomous-driving policies must remain reliable in nominal
+          traffic while recovering from rare close interactions, yet such
+          long-tail failures are sparsely represented in natural driving
+          logs. Existing adversarial scenario-generation methods often
+          maximize static criticality, producing stress cases that may be
+          detached from the current policy or insufficiently constrained
+          for useful training.
+        </p>
+
+        <p>
+          We present DASH, a dynamic framework with high-risk resampling
+          from policy feedback for closed-loop driving training. DASH
+          searches a multimodal motion-prior candidate bank, ranks future
+          trajectories by learned interaction risk, and applies bounded
+          residual edits to create interpretable stress cases. On the policy
+          side, a base actor preserves nominal driving, while an online risk
+          gate activates residual corrective control only as local interaction
+          risk rises.
+        </p>
+
+        <p>
+          Under the reported simulator protocol, learned ranking provides
+          the main source of risk exposure, bounded refinement adds stress
+          under measurable displacement diagnostics, and the risk-gated
+          policy improves success, route completion, and road keeping across
+          nominal, adversarial, and mixed suites. These results support
+          policy-aligned stress generation rather than collision pursuit
+          alone, together with risk-conditioned control that preserves
+          nominal capability during high-risk training.
+        </p>
+
       </div>
+
+
+      <figure class="main-figure">
+        <img
+          src="./assets/figures/dash_framework.png"
+          alt="Overall DASH framework"
+        >
+
+        <figcaption>
+          <strong>Framework overview.</strong>
+          Logged scene context is converted into multimodal adversarial
+          traffic variants through motion-prior prediction, learned
+          risk-aware selection, and bounded residual refinement. The
+          resulting scenarios are used by a risk-gated residual policy
+          with risk-structured replay.
+        </figcaption>
+      </figure>
+
+
+      <figure class="main-figure workflow-figure">
+        <img
+          src="./assets/figures/dash_workflow.png"
+          alt="DASH scenario-generation and policy-training workflow"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Scenario generation and policy-training workflow.</strong>
+          Starting from normal replay, multimodal candidate futures are
+          ranked and locally refined to construct a safety-critical
+          interaction, which is then used for risk-conditioned policy
+          training.
+        </figcaption>
+      </figure>
+
     </section>
 
-    <section class="section" id="results">
-      <div class="container">
-        <div class="section-head">
+
+    <!-- ===================================================== -->
+    <!-- RESULTS -->
+    <!-- ===================================================== -->
+
+    <section class="content-panel" id="results">
+
+      <div class="section-heading">
+        <span class="section-number">02</span>
+
+        <div>
           <h2>Results</h2>
           <p>
-            The key evidence is summarized below using compact tables and two representative
-            result figures.
+            Generator component analysis and full policy evaluation.
           </p>
         </div>
-
-        <div class="metric-grid">
-          <div class="metric-card">
-            <span>Scenario generation</span>
-            <strong>81.43%</strong>
-            <p>collision exposure under the shared simulator protocol</p>
-          </div>
-          <div class="metric-card">
-            <span>Candidate ranking</span>
-            <strong>96.4%</strong>
-            <p>Top-1 recovery of proxy-oracle coverage</p>
-          </div>
-          <div class="metric-card">
-            <span>Mixed-50 suite</span>
-            <strong>50.0%</strong>
-            <p>success rate with risk-conditioned TD3</p>
-          </div>
-        </div>
-
-        <div class="table-grid">
-          <div class="table-card">
-            <h3>Scenario generation comparison</h3>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Method</th>
-                    <th>Collision ↑</th>
-                    <th>TTC&lt;2.5s ↑</th>
-                    <th>Off-lane ↓</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="highlight">
-                    <td>DASH</td><td>81.43</td><td>37.07</td><td>10.63</td>
-                  </tr>
-                  <tr>
-                    <td>CAT</td><td>71.86</td><td>26.62</td><td>6.01</td>
-                  </tr>
-                  <tr>
-                    <td>KING</td><td>53.72</td><td>34.23</td><td>8.41</td>
-                  </tr>
-                  <tr>
-                    <td>AdvTrajOpt</td><td>41.96</td><td>25.87</td><td>48.93</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div class="table-card">
-            <h3>Policy evaluation</h3>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Suite</th>
-                    <th>Nominal TD3</th>
-                    <th>50% adv. TD3</th>
-                    <th>Risk-cond.</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Nominal</td><td>50.6 / 69.06</td><td>52.8 / 74.35</td><td class="best">63.0 / 80.44</td>
-                  </tr>
-                  <tr>
-                    <td>Adversarial</td><td>23.4 / 53.52</td><td>30.8 / 61.23</td><td class="best">36.2 / 64.83</td>
-                  </tr>
-                  <tr>
-                    <td>Mixed-50</td><td>38.0 / 61.61</td><td>42.2 / 67.28</td><td class="best">50.0 / 72.90</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="table-note">Each entry is success rate / route completion (%).</p>
-          </div>
-        </div>
-
-        <div class="result-figures">
-          <div class="figure-card">
-            <img src="./assets/figures/risk_traceability_profile.png" alt="Risk traceability profile">
-          </div>
-          <div class="figure-card">
-            <img src="./assets/figures/policy_training_compact.png" alt="Compact policy training results">
-          </div>
-        </div>
       </div>
-    </section>
 
-    <section class="section" id="demos">
-      <div class="container">
-        <div class="section-head">
-          <h2>Demos</h2>
+
+      <!-- TABLE 10 -->
+
+      <div class="result-section">
+
+        <div class="result-heading">
+          <div>
+            <span class="result-label">Scenario Generation</span>
+            <h3>Generator Configuration Analysis</h3>
+          </div>
+
           <p>
-            Two paired examples are shown for scenario generation and two paired examples are
-            shown for policy performance.
+            Rates are percentages. Values are mean ± standard deviation.
           </p>
         </div>
 
-        <div class="demo-group">
-          <h3>Scenario generation · Pair 1</h3>
-          <div class="demo-pair">
-            <figure class="demo-card">
-              <img src="./assets/gifs/scenario_pair1_logged.gif" alt="Logged scenario pair 1">
-              <figcaption>Logged interaction</figcaption>
-            </figure>
-            <figure class="demo-card">
-              <img src="./assets/gifs/scenario_pair1_generated.gif" alt="Generated scenario pair 1">
-              <figcaption>DASH-generated interaction</figcaption>
-            </figure>
-          </div>
+
+        <div
+          class="table-scroll"
+          role="region"
+          aria-label="Generator configuration analysis"
+          tabindex="0"
+        >
+
+          <table class="results-table generator-table">
+
+            <thead>
+              <tr>
+                <th>Variant</th>
+                <th>Coll. ↑</th>
+                <th>Early ↑</th>
+                <th>TTC&lt;2.5 s ↑</th>
+                <th>Min dist. ↓</th>
+                <th>ADE-ref. ↓</th>
+                <th>Off-lane ↓</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr class="ours-row">
+                <td>DASH</td>
+                <td><strong>83.38±0.60</strong></td>
+                <td><strong>66.05±1.20</strong></td>
+                <td><strong>39.50±0.50</strong></td>
+                <td><strong>4.66±0.04</strong></td>
+                <td>17.03±0.14</td>
+                <td>12.21±0.74</td>
+              </tr>
+
+              <tr>
+                <td>Refine Only</td>
+                <td>30.20±1.33</td>
+                <td>27.56±1.86</td>
+                <td>21.99±0.30</td>
+                <td>8.50±0.06</td>
+                <td>5.76±0.10</td>
+                <td>5.90±0.07</td>
+              </tr>
+
+              <tr>
+                <td>Rank Only</td>
+                <td>75.71±0.88</td>
+                <td>51.06±0.40</td>
+                <td>29.76±0.18</td>
+                <td>4.99±0.09</td>
+                <td>16.39±0.29</td>
+                <td>12.42±0.20</td>
+              </tr>
+
+              <tr>
+                <td>Random Selection</td>
+                <td>18.96±1.45</td>
+                <td>15.43±1.30</td>
+                <td>14.46±0.59</td>
+                <td>9.78±0.29</td>
+                <td>16.93±0.78</td>
+                <td>16.79±0.43</td>
+              </tr>
+
+              <tr>
+                <td>16 Candidates</td>
+                <td>73.24±1.27</td>
+                <td>59.17±1.81</td>
+                <td>35.92±0.70</td>
+                <td>5.25±0.04</td>
+                <td>13.76±0.10</td>
+                <td>8.72±0.77</td>
+              </tr>
+
+              <tr>
+                <td>Single Mode</td>
+                <td>8.51±0.28</td>
+                <td>6.31±0.15</td>
+                <td>11.52±0.10</td>
+                <td>10.05±0.03</td>
+                <td><strong>4.82±0.11</strong></td>
+                <td><strong>4.68±0.09</strong></td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
         </div>
 
-        <div class="demo-group">
-          <h3>Scenario generation · Pair 2</h3>
-          <div class="demo-pair">
-            <figure class="demo-card">
-              <img src="./assets/gifs/scenario_pair2_logged.gif" alt="Logged scenario pair 2">
-              <figcaption>Logged interaction</figcaption>
-            </figure>
-            <figure class="demo-card">
-              <img src="./assets/gifs/scenario_pair2_generated.gif" alt="Generated scenario pair 2">
-              <figcaption>DASH-generated interaction</figcaption>
-            </figure>
-          </div>
-        </div>
+        <p class="table-caption">
+          <strong>Table 10.</strong>
+          Generator configuration analysis over DASH and five reduced
+          configurations.
+        </p>
 
-        <div class="demo-group">
-          <h3>Policy training · Pair 1</h3>
-          <div class="demo-pair">
-            <figure class="demo-card">
-              <img src="./assets/gifs/policy_pair1_baseline.gif" alt="Policy baseline pair 1">
-              <figcaption>Nominal-only TD3</figcaption>
-            </figure>
-            <figure class="demo-card">
-              <img src="./assets/gifs/policy_pair1_risk_gated.gif" alt="Policy risk-gated pair 1">
-              <figcaption>Risk-gated residual TD3</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <div class="demo-group">
-          <h3>Policy training · Pair 2</h3>
-          <div class="demo-pair">
-            <figure class="demo-card">
-              <img src="./assets/gifs/policy_pair2_baseline.gif" alt="Policy baseline pair 2">
-              <figcaption>Nominal-only TD3</figcaption>
-            </figure>
-            <figure class="demo-card">
-              <img src="./assets/gifs/policy_pair2_risk_gated.gif" alt="Policy risk-gated pair 2">
-              <figcaption>Risk-gated residual TD3</figcaption>
-            </figure>
-          </div>
-        </div>
       </div>
+
+
+      <!-- TABLE 14 -->
+
+      <div class="result-section policy-result">
+
+        <div class="result-heading">
+          <div>
+            <span class="result-label">Policy Training</span>
+            <h3>Full Policy Evaluation</h3>
+          </div>
+
+          <p>
+            Mean ± between-group standard deviation over five disjoint
+            evaluation groups.
+          </p>
+        </div>
+
+
+        <div
+          class="table-scroll"
+          role="region"
+          aria-label="Full policy evaluation"
+          tabindex="0"
+        >
+
+          <table class="results-table policy-table">
+
+            <thead>
+              <tr>
+                <th>Suite</th>
+                <th>Training Curriculum</th>
+                <th>Succ. ↑</th>
+                <th>Crash ↓</th>
+                <th>Out ↓</th>
+                <th>RC ↑</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr class="suite-row">
+                <td colspan="6">Nominal Suite</td>
+              </tr>
+
+              <tr>
+                <td>Nominal</td>
+                <td>Nominal TD3</td>
+                <td>50.6±5.32</td>
+                <td>18.4±2.88</td>
+                <td>29.4±5.18</td>
+                <td>69.06±4.09</td>
+              </tr>
+
+              <tr>
+                <td>Nominal</td>
+                <td>50% Adv. TD3</td>
+                <td>52.8±4.15</td>
+                <td><strong>16.6±2.61</strong></td>
+                <td>31.4±4.56</td>
+                <td>74.35±0.84</td>
+              </tr>
+
+              <tr class="ours-row">
+                <td>Nominal</td>
+                <td>Risk-Cond. TD3</td>
+                <td><strong>63.0±3.16</strong></td>
+                <td>16.8±0.84</td>
+                <td><strong>21.6±2.79</strong></td>
+                <td><strong>80.44±1.60</strong></td>
+              </tr>
+
+
+              <tr class="suite-row">
+                <td colspan="6">Adversarial Suite</td>
+              </tr>
+
+              <tr>
+                <td>Adversarial</td>
+                <td>Nominal TD3</td>
+                <td>23.4±2.61</td>
+                <td>48.4±4.93</td>
+                <td>27.0±6.20</td>
+                <td>53.52±3.00</td>
+              </tr>
+
+              <tr>
+                <td>Adversarial</td>
+                <td>50% Adv. TD3</td>
+                <td>30.8±2.77</td>
+                <td><strong>43.8±3.96</strong></td>
+                <td>26.0±1.87</td>
+                <td>61.23±3.09</td>
+              </tr>
+
+              <tr class="ours-row">
+                <td>Adversarial</td>
+                <td>Risk-Cond. TD3</td>
+                <td><strong>36.2±4.27</strong></td>
+                <td>45.0±3.81</td>
+                <td><strong>20.0±4.00</strong></td>
+                <td><strong>64.83±1.87</strong></td>
+              </tr>
+
+
+              <tr class="suite-row">
+                <td colspan="6">Mixed-20 Suite</td>
+              </tr>
+
+              <tr>
+                <td>Mixed-20</td>
+                <td>Nominal TD3</td>
+                <td>43.6±2.88</td>
+                <td>24.6±1.52</td>
+                <td>30.2±3.27</td>
+                <td>65.83±2.25</td>
+              </tr>
+
+              <tr>
+                <td>Mixed-20</td>
+                <td>50% Adv. TD3</td>
+                <td>46.8±5.40</td>
+                <td><strong>23.8±3.11</strong></td>
+                <td>30.2±5.97</td>
+                <td>70.96±2.34</td>
+              </tr>
+
+              <tr class="ours-row">
+                <td>Mixed-20</td>
+                <td>Risk-Cond. TD3</td>
+                <td><strong>57.6±2.07</strong></td>
+                <td><strong>23.8±1.92</strong></td>
+                <td><strong>19.8±0.84</strong></td>
+                <td><strong>77.11±1.47</strong></td>
+              </tr>
+
+
+              <tr class="suite-row">
+                <td colspan="6">Mixed-50 Suite</td>
+              </tr>
+
+              <tr>
+                <td>Mixed-50</td>
+                <td>Nominal TD3</td>
+                <td>38.0±4.24</td>
+                <td>33.6±3.58</td>
+                <td>28.0±3.94</td>
+                <td>61.61±2.27</td>
+              </tr>
+
+              <tr>
+                <td>Mixed-50</td>
+                <td>50% Adv. TD3</td>
+                <td>42.2±7.50</td>
+                <td><strong>29.0±4.53</strong></td>
+                <td>29.0±6.52</td>
+                <td>67.28±2.59</td>
+              </tr>
+
+              <tr class="ours-row">
+                <td>Mixed-50</td>
+                <td>Risk-Cond. TD3</td>
+                <td><strong>50.0±4.47</strong></td>
+                <td>31.6±3.05</td>
+                <td><strong>19.6±1.95</strong></td>
+                <td><strong>72.90±2.18</strong></td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <p class="table-caption">
+          <strong>Table 14.</strong>
+          Full policy evaluation including Mixed-20.
+          Succ., Crash, Out, and RC denote success, crash, off-road,
+          and route-completion rates.
+        </p>
+
+      </div>
+
     </section>
 
-    <footer class="footer">
-      <div class="container">
-        <p><strong>DASH</strong> · Project page for the public paper version.</p>
-        <p>Corresponding author: <a href="mailto:wezhuang@seu.edu.cn">wezhuang@seu.edu.cn</a></p>
+
+    <!-- ===================================================== -->
+    <!-- DEMOS -->
+    <!-- ===================================================== -->
+
+    <section class="content-panel" id="demos">
+
+      <div class="section-heading">
+        <span class="section-number">03</span>
+
+        <div>
+          <h2>Qualitative Demos</h2>
+          <p>
+            Representative scenario-generation and policy-control cases.
+          </p>
+        </div>
       </div>
-    </footer>
+
+
+      <div class="demo-category">
+
+        <div class="demo-category-heading">
+          <h3>Scenario Generation</h3>
+
+          <p>
+            Logged interactions and their corresponding DASH-generated
+            high-risk variants.
+          </p>
+        </div>
+
+
+        <div class="demo-grid">
+
+          <figure class="demo-item">
+            <img
+              src="./assets/gifs/scenario_pair1_logged.gif"
+              alt="First logged scenario"
+              loading="lazy"
+            >
+            <figcaption>Case 1 · Logged</figcaption>
+          </figure>
+
+          <figure class="demo-item">
+            <img
+              src="./assets/gifs/scenario_pair1_generated.gif"
+              alt="First DASH-generated scenario"
+              loading="lazy"
+            >
+            <figcaption>Case 1 · DASH Generated</figcaption>
+          </figure>
+
+          <figure class="demo-item">
+            <img
+              src="./assets/gifs/scenario_pair2_logged.gif"
+              alt="Second logged scenario"
+              loading="lazy"
+            >
+            <figcaption>Case 2 · Logged</figcaption>
+          </figure>
+
+          <figure class="demo-item">
+            <img
+              src="./assets/gifs/scenario_pair2_generated.gif"
+              alt="Second DASH-generated scenario"
+              loading="lazy"
+            >
+            <figcaption>Case 2 · DASH Generated</figcaption>
+          </figure>
+
+        </div>
+
+      </div>
+
+
+      <div class="demo-category policy-demos">
+
+        <div class="demo-category-heading">
+          <h3>Policy Rollouts</h3>
+
+          <p>
+            Nominal-only TD3 and risk-gated residual TD3 under matched
+            scenario conditions.
+          </p>
+        </div>
+
+
+        <div class="demo-grid">
+
+          <figure class="demo-item">
+            <img
+              src="./assets/gifs/policy_pair1_baseline.gif"
+              alt="First baseline policy rollout"
+              loading="lazy"
+            >
+            <figcaption>Case 1 · Nominal-Only TD3</figcaption>
+          </figure>
+
+          <figure class="demo-item">
+            <img
+              src="./assets/gifs/policy_pair1_risk_gated.gif"
+              alt="First risk-gated policy rollout"
+              loading="lazy"
+            >
+            <figcaption>Case 1 · Risk-Gated TD3</figcaption>
+          </figure>
+
+          <figure class="demo-item">
+            <img
+              src="./assets/gifs/policy_pair2_baseline.gif"
+              alt="Second baseline policy rollout"
+              loading="lazy"
+            >
+            <figcaption>Case 2 · Nominal-Only TD3</figcaption>
+          </figure>
+
+          <figure class="demo-item">
+            <img
+              src="./assets/gifs/policy_pair2_risk_gated.gif"
+              alt="Second risk-gated policy rollout"
+              loading="lazy"
+            >
+            <figcaption>Case 2 · Risk-Gated TD3</figcaption>
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- ACKNOWLEDGMENTS -->
+    <!-- ===================================================== -->
+
+    <section
+      class="content-panel acknowledgments-panel"
+      id="acknowledgments"
+    >
+
+      <div class="section-heading">
+        <span class="section-number">04</span>
+
+        <div>
+          <h2>Acknowledgments</h2>
+        </div>
+      </div>
+
+      <p>
+        This work was supported in part by the National Natural Science
+        Foundation of China (NSFC) under Grant 52441204, in part by the
+        Major Science and Technology Special Project of Jiangsu Province
+        under Grant BG2025018, and in part by the Excellent Youth Fund
+        Project of the Jiangsu Basic Research Program under Grant
+        BK20250172.
+      </p>
+
+    </section>
+
   </main>
+
+
+  <footer class="footer">
+
+    <p>
+      <strong>DASH</strong>
+      · Dynamic Adversarial Scenario Generation
+    </p>
+
+    <p>
+      Corresponding author:
+      <a href="mailto:wezhuang@seu.edu.cn">
+        wezhuang@seu.edu.cn
+      </a>
+    </p>
+
+  </footer>
+
 </body>
 </html>
