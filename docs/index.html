@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
   <meta
     name="description"
     content="DASH: Dynamic Adversarial Scenario Generation with High-Risk Resampling from Policy Feedback for Closed-Loop Driving Training."
   >
 
-  <meta name="theme-color" content="#f3f4f6">
+  <meta name="theme-color" content="#f5f6f8">
 
   <title>DASH | Project Page</title>
 
@@ -21,34 +25,47 @@
 
   <link
     rel="stylesheet"
-    href="./assets/css/style.css"
+    href="./assets/css/style.css?v=20260715-5"
   >
-
-  <script
-    src="./assets/js/main.js"
-    defer
-  ></script>
-  
 </head>
 
 <body>
 
-  <header class="site-header">
-    <div class="nav-container">
-      <a class="brand" href="#top">DASH</a>
+  <!-- ===================================================== -->
+  <!-- NAVIGATION -->
+  <!-- ===================================================== -->
 
-      <nav class="nav-links" aria-label="Page navigation">
+  <header class="site-header">
+
+    <div class="nav-container">
+
+      <a
+        class="brand"
+        href="#top"
+        aria-label="Back to top"
+      >
+        DASH
+      </a>
+
+      <nav
+        class="nav-links"
+        aria-label="Page navigation"
+      >
         <a href="#overview">Overview</a>
         <a href="#results">Results</a>
         <a href="#demos">Demos</a>
-        <a href="#citation">Citation</a>
         <a href="#acknowledgments">Acknowledgments</a>
       </nav>
+
     </div>
+
   </header>
 
 
-  <main class="page-container" id="top">
+  <main
+    class="page-container"
+    id="top"
+  >
 
     <!-- ===================================================== -->
     <!-- HERO -->
@@ -56,7 +73,9 @@
 
     <section class="hero-panel">
 
-      <p class="project-label">Research Project Page</p>
+      <p class="project-label">
+        Research Project Page
+      </p>
 
       <h1>
         DASH: Dynamic Adversarial Scenario Generation with
@@ -80,14 +99,31 @@
         Weichao Zhuang<sup>1,*</sup>
       </p>
 
-      <div class="affiliations">
-        <span><sup>1</sup>Southeast University</span>
-        <span><sup>2</sup>The University of Hong Kong</span>
-        <span><sup>3</sup>University of Michigan</span>
-        <span><sup>4</sup>Chery Automobile Co., Ltd.</span>
+      <div
+        class="affiliations"
+        aria-label="Author affiliations"
+      >
+        <span>
+          <sup>1</sup>Southeast University
+        </span>
+
+        <span>
+          <sup>2</sup>The University of Hong Kong
+        </span>
+
+        <span>
+          <sup>3</sup>University of Michigan
+        </span>
+
+        <span>
+          <sup>4</sup>Chery Automobile Co., Ltd.
+        </span>
       </div>
 
-      <div class="resource-buttons">
+      <div
+        class="resource-buttons"
+        aria-label="Project resources"
+      >
 
         <a
           class="resource-button primary"
@@ -98,11 +134,17 @@
           Paper
         </a>
 
-        <span class="resource-button disabled">
+        <span
+          class="resource-button disabled"
+          aria-disabled="true"
+        >
           arXiv soon
         </span>
 
-        <span class="resource-button disabled">
+        <span
+          class="resource-button disabled"
+          aria-disabled="true"
+        >
           Code soon
         </span>
 
@@ -115,15 +157,19 @@
     <!-- OVERVIEW -->
     <!-- ===================================================== -->
 
-    <section class="content-panel" id="overview">
+    <section
+      class="content-panel"
+      id="overview"
+    >
 
       <div class="section-heading">
-        <span class="section-number">01</span>
 
-        <div>
-          <h2>Overview</h2>
-          <p>Framework motivation and overall workflow.</p>
-        </div>
+        <h2>Overview</h2>
+
+        <p>
+          Framework motivation and overall workflow.
+        </p>
+
       </div>
 
 
@@ -167,6 +213,7 @@
 
 
       <figure class="main-figure">
+
         <img
           src="./assets/figures/dash_framework.png"
           alt="Overall DASH framework"
@@ -180,10 +227,12 @@
           resulting scenarios are used by a risk-gated residual policy
           with risk-structured replay.
         </figcaption>
+
       </figure>
 
 
-      <figure class="main-figure workflow-figure">
+      <figure class="main-figure">
+
         <img
           src="./assets/figures/dash_workflow.png"
           alt="DASH scenario-generation and policy-training workflow"
@@ -197,6 +246,7 @@
           interaction, which is then used for risk-conditioned policy
           training.
         </figcaption>
+
       </figure>
 
     </section>
@@ -206,17 +256,19 @@
     <!-- RESULTS -->
     <!-- ===================================================== -->
 
-    <section class="content-panel" id="results">
+    <section
+      class="content-panel"
+      id="results"
+    >
 
       <div class="section-heading">
-        <span class="section-number">02</span>
 
-        <div>
-          <h2>Results</h2>
-          <p>
-            Generator component analysis and full policy evaluation.
-          </p>
-        </div>
+        <h2>Results</h2>
+
+        <p>
+          Generator component analysis and full policy evaluation.
+        </p>
+
       </div>
 
 
@@ -225,14 +277,21 @@
       <div class="result-section">
 
         <div class="result-heading">
+
           <div>
-            <span class="result-label">Scenario Generation</span>
-            <h3>Generator Configuration Analysis</h3>
+            <span class="result-label">
+              Scenario Generation
+            </span>
+
+            <h3>
+              Generator Configuration Analysis
+            </h3>
           </div>
 
           <p>
             Rates are percentages. Values are mean ± standard deviation.
           </p>
+
         </div>
 
 
@@ -336,18 +395,25 @@
 
       <!-- TABLE 14 -->
 
-      <div class="result-section policy-result">
+      <div class="result-section">
 
         <div class="result-heading">
+
           <div>
-            <span class="result-label">Policy Training</span>
-            <h3>Full Policy Evaluation</h3>
+            <span class="result-label">
+              Policy Training
+            </span>
+
+            <h3>
+              Full Policy Evaluation
+            </h3>
           </div>
 
           <p>
             Mean ± between-group standard deviation over five disjoint
             evaluation groups.
           </p>
+
         </div>
 
 
@@ -522,29 +588,33 @@
     <!-- DEMOS -->
     <!-- ===================================================== -->
 
-    <section class="content-panel" id="demos">
+    <section
+      class="content-panel"
+      id="demos"
+    >
 
       <div class="section-heading">
-        <span class="section-number">03</span>
 
-        <div>
-          <h2>Qualitative Demos</h2>
-          <p>
-            Representative scenario-generation and policy-control cases.
-          </p>
-        </div>
+        <h2>Qualitative Demos</h2>
+
+        <p>
+          Representative scenario-generation and policy-control cases.
+        </p>
+
       </div>
 
 
       <div class="demo-category">
 
         <div class="demo-category-heading">
+
           <h3>Scenario Generation</h3>
 
           <p>
             Logged interactions and their corresponding DASH-generated
             high-risk variants.
           </p>
+
         </div>
 
 
@@ -556,7 +626,9 @@
               alt="First logged scenario"
               loading="lazy"
             >
-            <figcaption>Case 1 · Logged</figcaption>
+            <figcaption>
+              Case 1 · Logged
+            </figcaption>
           </figure>
 
           <figure class="demo-item">
@@ -565,7 +637,9 @@
               alt="First DASH-generated scenario"
               loading="lazy"
             >
-            <figcaption>Case 1 · DASH Generated</figcaption>
+            <figcaption>
+              Case 1 · DASH Generated
+            </figcaption>
           </figure>
 
           <figure class="demo-item">
@@ -574,7 +648,9 @@
               alt="Second logged scenario"
               loading="lazy"
             >
-            <figcaption>Case 2 · Logged</figcaption>
+            <figcaption>
+              Case 2 · Logged
+            </figcaption>
           </figure>
 
           <figure class="demo-item">
@@ -583,7 +659,9 @@
               alt="Second DASH-generated scenario"
               loading="lazy"
             >
-            <figcaption>Case 2 · DASH Generated</figcaption>
+            <figcaption>
+              Case 2 · DASH Generated
+            </figcaption>
           </figure>
 
         </div>
@@ -591,15 +669,17 @@
       </div>
 
 
-      <div class="demo-category policy-demos">
+      <div class="demo-category">
 
         <div class="demo-category-heading">
+
           <h3>Policy Rollouts</h3>
 
           <p>
             Nominal-only TD3 and risk-gated residual TD3 under matched
             scenario conditions.
           </p>
+
         </div>
 
 
@@ -611,7 +691,9 @@
               alt="First baseline policy rollout"
               loading="lazy"
             >
-            <figcaption>Case 1 · Nominal-Only TD3</figcaption>
+            <figcaption>
+              Case 1 · Nominal-Only TD3
+            </figcaption>
           </figure>
 
           <figure class="demo-item">
@@ -620,7 +702,9 @@
               alt="First risk-gated policy rollout"
               loading="lazy"
             >
-            <figcaption>Case 1 · Risk-Gated TD3</figcaption>
+            <figcaption>
+              Case 1 · Risk-Gated TD3
+            </figcaption>
           </figure>
 
           <figure class="demo-item">
@@ -629,7 +713,9 @@
               alt="Second baseline policy rollout"
               loading="lazy"
             >
-            <figcaption>Case 2 · Nominal-Only TD3</figcaption>
+            <figcaption>
+              Case 2 · Nominal-Only TD3
+            </figcaption>
           </figure>
 
           <figure class="demo-item">
@@ -638,7 +724,9 @@
               alt="Second risk-gated policy rollout"
               loading="lazy"
             >
-            <figcaption>Case 2 · Risk-Gated TD3</figcaption>
+            <figcaption>
+              Case 2 · Risk-Gated TD3
+            </figcaption>
           </figure>
 
         </div>
@@ -648,78 +736,6 @@
     </section>
 
 
-
-    <!-- ===================================================== -->
-    <!-- CITATION -->
-    <!-- ===================================================== -->
-    
-    <section
-      class="content-panel citation-panel"
-      id="citation"
-    >
-      <div class="section-heading">
-        <span class="section-number">04</span>
-        
-        <div>
-          <h2>Citation</h2>
-          <p>
-            Please use the following citation when referring to this work.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="citation-content">
-
-        <div class="suggested-citation">
-
-          <span class="citation-label">Suggested Citation</span>
-
-          <p>
-            Chen, Dehui, et al.
-            “DASH: Dynamic Adversarial Scenario Generation with High-Risk
-            Resampling from Policy Feedback for Closed-Loop Driving Training.”
-            arXiv preprint, 2026.
-          </p>
-
-        </div>
-
-
-        <div class="citation-box">
-
-          <div class="citation-toolbar">
-
-            <span>BibTeX</span>
-
-            <button
-              class="copy-button"
-              type="button"
-              data-copy-target="bibtex"
-            >
-              Copy BibTeX
-            </button>
-
-          </div>
-
-          <pre id="bibtex"><code>@article{chen2026dash,
-      title   = {DASH: Dynamic Adversarial Scenario Generation with High-Risk Resampling from Policy Feedback for Closed-Loop Driving Training},
-      author  = {Chen, Dehui and Liu, Yongzhi and Yan, Xintao and Cao, Zhong and Hu, Weilong and Zhou, Dian and Wang, Hansen and Qiu, Yushu and Dong, Zhaozhi and Liu, Lijun and Liang, Taonian and Yin, Guodong and Zhuang, Weichao},
-      journal = {arXiv preprint},
-      year    = {2026}
-    }</code></pre>
-
-        </div>
-
-      </div>
-
-
-      <p class="citation-note">
-        The BibTeX entry will be updated with the final arXiv identifier
-        after the public arXiv record is available.
-      </p>
-
-    </section>
-    
     <!-- ===================================================== -->
     <!-- ACKNOWLEDGMENTS -->
     <!-- ===================================================== -->
@@ -730,11 +746,9 @@
     >
 
       <div class="section-heading">
-        <span class="section-number">05</span>
 
-        <div>
-          <h2>Acknowledgments</h2>
-        </div>
+        <h2>Acknowledgments</h2>
+
       </div>
 
       <p>
