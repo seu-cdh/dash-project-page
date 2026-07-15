@@ -711,6 +711,139 @@ p {
   color: var(--accent-dark);
 }
 
+/* =========================================================
+   CITATION
+   ========================================================= */
+
+.citation-content {
+  display: grid;
+  gap: 18px;
+}
+
+
+.suggested-citation {
+  padding: 18px 20px;
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+
+  background: #f8f9fb;
+}
+
+
+.citation-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--accent);
+
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+.suggested-citation p {
+  margin: 0;
+
+  color: #46515d;
+
+  font-size: 0.91rem;
+  line-height: 1.7;
+}
+
+
+.citation-box {
+  overflow: hidden;
+
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+
+  background: #111827;
+}
+
+
+.citation-toolbar {
+  min-height: 50px;
+  padding: 9px 12px 9px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  border-bottom: 1px solid #334155;
+
+  color: #e5e7eb;
+
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+
+.copy-button {
+  padding: 7px 12px;
+
+  border: 1px solid #64748b;
+  border-radius: 999px;
+
+  background: #1e293b;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+
+.copy-button:hover {
+  border-color: #94a3b8;
+  background: #334155;
+}
+
+
+.citation-box pre {
+  margin: 0;
+  padding: 20px;
+
+  overflow-x: auto;
+
+  color: #e2e8f0;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    Menlo,
+    monospace;
+
+  font-size: 0.78rem;
+  line-height: 1.65;
+
+  white-space: pre;
+}
+
+
+.citation-box code {
+  font-family: inherit;
+}
+
+
+.citation-note {
+  margin: 13px 2px 0;
+
+  color: var(--muted);
+
+  font-size: 0.79rem;
+  line-height: 1.55;
+}
 
 /* =========================================================
    RESPONSIVE
